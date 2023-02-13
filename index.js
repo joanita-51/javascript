@@ -1,5 +1,16 @@
-alert("hello world");
+// The alert dialog box
+alert();
 window.alert("Hello, World the second time");
+
+//The confirm dialog box
+let decision = window.confirm("Is it OK?");
+console.log(decision);
+
+let remove = confirm("Remove all data?");
+let message = remove ? "Deleting Data" : "Cancelled"
+
+console.log(message);
+
 let ticket = {
     "from":"Wandegeya",
     "to":"Ntinda",
