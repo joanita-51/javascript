@@ -1,3 +1,5 @@
+alert("hello world");
+window.alert("Hello, World the second time");
 let ticket = {
     "from":"Wandegeya",
     "to":"Ntinda",
@@ -51,3 +53,31 @@ console.log(books.length);
 
 let pageSum = books[0].pages + books[1].pages + books[2].pages;
 console.log(`pages: ${pageSum}`);
+
+//Assignment2
+let contacts = [{
+    name: "Maxwell Wright",
+    phone: "(0191) 719 6495",
+    email: "Curabitur.egestas.nunc@nonummyac.co.uk"
+    }, {
+    name: "Raja Villarreal",
+    phone: "0866 398 2895",
+    email: "posuere.vulputate@sed.com"
+    }, {
+    name: "Helen Richards",
+    phone: "0800 1111",
+    email: "libero@convallis.edu"
+    }];
+    
+    let newContact={
+        name:"Maisie Haley",
+        phone:"0913 531 3030",
+        email:"risus.Quisque@urna.ca"
+    }
+    contacts.push(newContact);
+    
+    console.log(`${contacts[0].name} / ${contacts[0].phone} / ${contacts[0].email}`);
+    console.log(`${contacts[3].name} / ${contacts[3].phone} / ${contacts[3].email}`);
+    console.log(contacts.indexOf(newContact));
+
+    
