@@ -1,15 +1,18 @@
 // The alert dialog box
-alert();
 window.alert("Hello, World the second time");
 
 //The confirm dialog box
-let decision = window.confirm("Is it OK?");
-console.log(decision);
-
 let remove = confirm("Remove all data?");
 let message = remove ? "Deleting Data" : "Cancelled"
 
 console.log(message);
+
+//the prompt dialog box
+let name1 = window.prompt("What is your name ? ", "John Doe");
+name1 = name1? name1: "anonymous";
+
+let age = prompt ("Hello "+ name1 + " How old are you?");
+alert(name1 + " is " + age + " years old ");
 
 let ticket = {
     "from":"Wandegeya",
@@ -91,4 +94,48 @@ let contacts = [{
     console.log(`${contacts[3].name} / ${contacts[3].phone} / ${contacts[3].email}`);
     console.log(contacts.indexOf(newContact));
 
+    //Conditional operators (for, while and if ... else)
+let vessel = {
+    LATITUDE : 40.07288,
+    LONGITUDE : 154.48535,
+    COURSE : 285.0,
+    SPEED : 14.0,
+    IMO: 9175717,
+    NAME: "MARENO"
+}
+for (let key in vessel){
+    console.log(`${key} -> ${vessel[key]}`);
+}
+
+let movie =[];
+let anotherMovie = true
+
+while(anotherMovie){
+    let movieName = prompt("Enter the name of the movie");
+    let rating = prompt("Enter the movie's rating");
+    if((movieName !=null) && (rating !=null)){
+        movie.push({
+          title : movieName,
+          imdb  : Number(rating)
+        }
+        );
+    } else {
+        anotherMovie = false;
+    }
     
+
+}
+
+console.log("All movies with a rating of less than 7:")
+for(m of movie){
+    if(m.imdb < 7){
+        console.log(`${m.title} (${m.imdb})`);
+    }
+}
+
+console.log("All movies with a rating of greater than 7:")
+for (n of movie){
+    if(n.imdb >= 7){
+        console.log(`${n.title} (${n.imdb})`)
+    }
+}    
