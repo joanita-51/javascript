@@ -71,4 +71,18 @@ let contacts = [{
     console.log(showContact(contacts, 0));
     console.log(showAllContacts(contacts));
     console.log(addNewContact(contacts, "Anita", 78964321, "nakityoanita@gmail.com"));
+
+    //sorting by name
+    sortedContacts = contacts.sort((a,b)=>{
+        firstName = a.name.toUpperCase();
+        secondName = b.name.toLowerCase();
+        
+        if(firstName < secondName)
+            return -1;
+        if (firstName > secondName)
+            return 1;
+        return 0;
+        
+    })
+    console.log(JSON.stringify(sortedContacts));
     
