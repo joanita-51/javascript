@@ -5,5 +5,15 @@ function div (a,b){
     return a/b;
 }
 
-console.log(div(4,2));
-console.log(div(4,0));
+let numbers = [10,40,0,20,50];
+
+for(i=0; i<numbers.length; i++){
+    let result;
+    try{
+        result = div(1000, numbers[i]);
+    }catch(error){
+        console.log(error);
+    }
+
+ console.log(result);
+}
