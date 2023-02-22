@@ -23,11 +23,12 @@ let contacts = [{
                 console.log(`Name: ${contacts[index].name}`);
                 console.log(`Phone: ${contacts[index].phone}`);
                 console.log(`Email: ${contacts[index].email}`);
+                console.log(" ");
             }
             else{
                 console.log("Invalid index")
             }
-        
+            console.log(contacts[index]);
         }
         else{
             console.log("Invalid contact list")    
@@ -43,6 +44,7 @@ let contacts = [{
                 console.log(`Name: ${contact.name}`);
                 console.log(`Phone: ${contact.phone}`);
                 console.log(`Email: ${contact.email}`);
+                console.log(" ");
             }
         }
         else {
@@ -65,24 +67,65 @@ let contacts = [{
         } else {
             console.log("Invalid Contact list");
         };
-        showContact(contacts, contacts.length-1);    
+        console.log(`New Contact: ${JSON.stringify(contacts[contacts.length -1])}`);
     };
-    
-    console.log(showContact(contacts, 0));
-    console.log(showAllContacts(contacts));
-    console.log(addNewContact(contacts, "Anita", 78964321, "nakityoanita@gmail.com"));
 
-    //sorting by name
-    sortedContacts = contacts.sort((a,b)=>{
-        firstName = a.name.toUpperCase();
-        secondName = b.name.toLowerCase();
-        
-        if(firstName < secondName)
-            return -1;
-        if (firstName > secondName)
-            return 1;
-        return 0;
-        
-    })
-    console.log(JSON.stringify(sortedContacts));
+    //sorting functionality
+    let sortContacts = (contacts, sortBy)=>{
+        switch(sortBy){
+            case "name":
+                contacts.sort((a,b)=>a.name.localeCompare(b.name));
+                console.log(contacts);
+                break;
+            case "phone":
+                contacts.sort((a,b)=>a.phone.localeCompare(b.phone));
+                console.log(contacts);
+                break;
+            case "email":
+                contacts.sort((a,b)=>a.email.localeCompare(b.email));
+                console.log(contacts);
+                break;
+            default :
+                console.log("Invalid Sort Option")
+        }
     
+    }
+
+    //Combining everything
+    setTimeout(()=>{
+        let running = true;
+        let option = prompt ("Enter your preferred option:");
+
+            switch(option){
+                case "1":
+                    let index = prompt("Enter the contact index ");
+                    showContact(contacts, index);
+                    break;
+                case "2":
+                    showAllContacts(contacts);
+                    break;
+                case "3":
+                    let name = prompt("Enter name:");
+                    let phone = prompt("Enter phone:");
+                    let email = prompt("Enter email");
+                    addNewContact(contacts, name, phone, email);
+                    break;
+                case "4":
+                    let sortBy = prompt("Choose option: name, phone, or email");
+                    sortContacts(contacts, sortBy);
+                    break;
+                case "5" :
+                    running = false;
+                    console.log("Thank you for using our app");
+                    break;
+                default:
+                    console.log("Invalid Option");
+                break;
+    
+    
+            }
+    
+    },1000);
+
+    
+ 
