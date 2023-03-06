@@ -91,40 +91,36 @@ let contacts = [{
     
     }
 
-    //Combining everything
+    //Combining all the functions
     setTimeout(()=>{
         let running = true;
         let option = prompt ("Enter your preferred option:");
-
-            switch(option){
-                case "1":
-                    let index = prompt("Enter the contact index ");
-                    showContact(contacts, index);
-                    break;
-                case "2":
-                    showAllContacts(contacts);
-                    break;
-                case "3":
-                    let name = prompt("Enter name:");
-                    let phone = prompt("Enter phone:");
-                    let email = prompt("Enter email");
-                    addNewContact(contacts, name, phone, email);
-                    break;
-                case "4":
-                    let sortBy = prompt("Choose option: name, phone, or email");
-                    sortContacts(contacts, sortBy);
-                    break;
-                case "5" :
-                    running = false;
-                    console.log("Thank you for using our app");
-                    break;
-                default:
-                    console.log("Invalid Option");
-                break;
-    
-    
-            }
-    
+        switch(option){
+            case "1":
+                let index = prompt("Enter the contact index ");
+                showContact(contacts, index);
+            break;
+            case "2":
+                showAllContacts(contacts);
+            break;
+            case "3":
+                let name = prompt("Enter name:");
+                let phone = prompt("Enter phone:");
+                let email = prompt("Enter email");
+                addNewContact(contacts, name, phone, email);
+            break;
+            case "4":
+                let sortBy = prompt("Choose option: name, phone, or email");
+                sortContacts(contacts, sortBy);
+            break;
+            case "5" :
+                running = false;
+                console.log("Thank you for using our app");
+            break;
+            default:
+                console.log("Invalid Option");
+            break;
+        }
     },1000);
 
     
