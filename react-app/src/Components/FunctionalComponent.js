@@ -1,9 +1,9 @@
-import { useContext } from "react"
-import {ThemeContext} from '../App'
+import { useTheme, useUpdateTheme } from "./ThemeContext";
 
 export default function FunctionalComponent() {
 
-  const theme = useContext(ThemeContext);
+  const theme = useTheme();
+  const toggle = useUpdateTheme()
 
   const themeStyles = {
     backgroundColor: theme? '#333':'#ccc',
@@ -12,8 +12,12 @@ export default function FunctionalComponent() {
     marging: '5rem',
   }
   return (
-    <div style={themeStyles}>
-      Function Theme
-    </div>
+    <>
+      <button onClick={toggle}> Toggle Theme</button>
+      <div style={themeStyles}>
+        Function Theme
+      </div>
+    </>
+
   )
 }
