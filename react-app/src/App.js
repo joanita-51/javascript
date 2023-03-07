@@ -4,21 +4,30 @@ import FunctionalComponent from "./Components/FunctionalComponent";
 import SignUp from "./Components/SignUp";
 import {ThemeProvider} from "./Components/ThemeContext"
 import { AuthProvider } from "./contexts/AuthContext";
-
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import LogIn from "./Components/LogIn";
+import ForgotPassword from "./Components/ForgotPassword";
 function App() {
   return (
-    <AuthProvider>
     <Container
       className="d-flex align-items-center justify-content-center"
       style={{minHeight:"100vh"}}
     >
       <div className="w-100" style={{maxWidth:"400px"}}>
-        <SignUp/>
+      <AuthProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<FunctionalComponent/>}/>
+            <Route path='/signup' element={<SignUp/>}/>
+            <Route path='/login' element={<LogIn/>}/>
+            <Route path='/forgot-password' element={<ForgotPassword/>}/>
+          </Routes>
+        </BrowserRouter>
+      </AuthProvider>
       </div>
 
-    </Container>
-    </AuthProvider>
 
+    </Container>
     /*
     <ThemeProvider>
       <FunctionalComponent/>
