@@ -7,6 +7,7 @@ import { AuthProvider } from "./contexts/AuthContext";
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import LogIn from "./Components/LogIn";
 import ForgotPassword from "./Components/ForgotPassword";
+import UpdateProfile from "./Components/UpdateProfile";
 function App() {
   return (
     <Container
@@ -21,6 +22,7 @@ function App() {
             <Route path='/signup' element={<SignUp/>}/>
             <Route path='/login' element={<LogIn/>}/>
             <Route path='/forgot-password' element={<ForgotPassword/>}/>
+            <Route path='/update-profile' element={<UpdateProfile/>}/>
           </Routes>
         </BrowserRouter>
       </AuthProvider>
